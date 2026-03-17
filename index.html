@@ -16,15 +16,18 @@ body {
   padding-bottom: 60px;
 }
 
+/* HEADINGS */
 h1 { text-align: center; }
 h2 { color: #38bdf8; margin-top: 25px; border-bottom: 1px solid #334155; padding-bottom: 5px; }
-h3 { margin-top: 15px; color: #94a3b8; }
+h3 { margin-top: 10px; color: #94a3b8; text-align: center; font-size: 16px; }
+
+/* LIST */
 ul { list-style: none; padding-left: 0; }
 li { margin: 8px 0; }
 input[type="checkbox"] { margin-right: 10px; cursor: pointer; }
 
+/* BUTTON */
 button {
-  margin-top: 20px;
   padding: 12px 25px;
   background: #38bdf8;
   border: none;
@@ -34,6 +37,7 @@ button {
   border-radius: 8px;
 }
 
+/* TITLE */
 .main-title {
   font-family: 'Orbitron', sans-serif;
   text-align: center;
@@ -43,9 +47,71 @@ button {
   -webkit-text-fill-color: transparent;
 }
 
-#login-screen { text-align: center; margin-top: 40px; }
-#tracker { display: none; max-width: 600px; margin: 0 auto; }
+/* ONE SHOT BUTTON */
+.link-btn {
+  display: block;
+  width: fit-content;
+  margin: 15px auto;
+  padding: 10px 20px;
+  background: #22d3ee;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.link-btn:hover { transform: scale(1.05); }
 
+.watermark {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 5px;
+  text-decoration: none;
+}
+
+/* 🔥 GLASS LOGIN BOX */
+#login-screen {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.glass-box {
+  width: 280px;
+  padding: 25px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.glass-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: white;
+}
+
+.glass-box button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* TRACKER */
+#tracker {
+  display: none;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* TOAST */
 .toast {
   position: fixed;
   bottom: 50px;
@@ -57,7 +123,6 @@ button {
   border-radius: 6px;
   opacity: 0;
 }
-
 .toast.show { opacity: 1; }
 
 .my-watermark {
@@ -75,18 +140,26 @@ button {
 
 <h1 class="main-title">+2 Biology Study Tracker</h1>
 
+<a href="https://plus2oneshotss.wordpress.com/biology/" target="_blank" class="link-btn">
+   One Shot
+</a>
+<a href="https://mibsam.online" target="_blank" class="watermark">
+  one shot © mibsam.online
+</a>
+
+<!-- 🔥 GLASS LOGIN -->
 <div id="login-screen">
-  <h3>Drop yo name to save progress</h3>
-  <input type="text" id="nameInput" placeholder="Your Name">
-  <br>
-  <button onclick="startTracker()">Enter</button>
+  <div class="glass-box">
+    <h3>Enter Your Name To Save Progress</h3>
+    <input type="text" id="nameInput" placeholder="Your Name">
+    <button onclick="startTracker()">Enter</button>
+  </div>
 </div>
 
+<!-- TRACKER -->
 <div id="tracker">
 
 <h2>UNIT VI: REPRODUCTION</h2>
-
-<h3>Flowering Plants</h3>
 <ul>
 <li><label><input type="checkbox"> Microsporogenesis</label></li>
 <li><label><input type="checkbox"> Megasporogenesis</label></li>
@@ -95,51 +168,11 @@ button {
 <li><label><input type="checkbox"> Endosperm & Embryo</label></li>
 </ul>
 
-<h3>Human Reproduction</h3>
-<ul>
-<li><label><input type="checkbox"> Systems</label></li>
-<li><label><input type="checkbox"> Gametogenesis</label></li>
-<li><label><input type="checkbox"> Menstrual Cycle</label></li>
-<li><label><input type="checkbox"> Fertilization</label></li>
-<li><label><input type="checkbox"> Parturition</label></li>
-</ul>
-
-<h3>Reproductive Health</h3>
-<ul>
-<li><label><input type="checkbox"> Contraception</label></li>
-<li><label><input type="checkbox"> MTP</label></li>
-<li><label><input type="checkbox"> STIs</label></li>
-<li><label><input type="checkbox"> IVF/ZIFT/GIFT</label></li>
-</ul>
-
 <h2>UNIT VII: GENETICS</h2>
 <ul>
 <li><label><input type="checkbox"> Mendel Laws</label></li>
-<li><label><input type="checkbox"> Co-dominance</label></li>
 <li><label><input type="checkbox"> DNA & Replication</label></li>
-<li><label><input type="checkbox"> Transcription & Translation</label></li>
 <li><label><input type="checkbox"> Evolution Concepts</label></li>
-</ul>
-
-<h2>UNIT VIII: HUMAN WELFARE</h2>
-<ul>
-<li><label><input type="checkbox"> Diseases & Immunity</label></li>
-<li><label><input type="checkbox"> AIDS & Cancer</label></li>
-<li><label><input type="checkbox"> Microbes Uses</label></li>
-</ul>
-
-<h2>UNIT IX: BIOTECH</h2>
-<ul>
-<li><label><input type="checkbox"> PCR</label></li>
-<li><label><input type="checkbox"> Vectors</label></li>
-<li><label><input type="checkbox"> Applications</label></li>
-</ul>
-
-<h2>UNIT X: ECOLOGY</h2>
-<ul>
-<li><label><input type="checkbox"> Population</label></li>
-<li><label><input type="checkbox"> Ecosystem</label></li>
-<li><label><input type="checkbox"> Biodiversity</label></li>
 </ul>
 
 <button onclick="saveProgress()" style="width:100%">Save Progress</button>
@@ -147,7 +180,6 @@ button {
 </div>
 
 <div id="toast" class="toast">Saved!</div>
-
 <a href="#" class="my-watermark">© Bald-e 2026</a>
 
 <script type="module">
@@ -177,7 +209,6 @@ window.startTracker = async function () {
 
   if (snap.exists()) {
     const saved = snap.data().checked || [];
-
     document.querySelectorAll('input[type="checkbox"]').forEach(box => {
       const topic = box.parentElement.textContent.trim();
       if (saved.includes(topic)) box.checked = true;
@@ -190,7 +221,6 @@ window.startTracker = async function () {
 
 window.saveProgress = async function () {
   const checked = [];
-
   document.querySelectorAll('input[type="checkbox"]').forEach(box => {
     if (box.checked) {
       const topic = box.parentElement.textContent.trim();
