@@ -247,14 +247,16 @@ import { getFirestore, setDoc, doc, getDoc }
 from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
+  apiKey: "AIzaSyCJ62YOtKbArLVsdVK7Fj-mNzTSBTUd_30",
   authDomain: "studytracker-9e7ae.firebaseapp.com",
-  projectId: "studytracker-9e7ae"
+  projectId: "studytracker-9e7ae",
+  storageBucket: "studytracker-9e7ae.firebasestorage.app",
+  messagingSenderId: "686559758224",
+  appId: "1:686559758224:web:d85642bb7a4dba37e29515"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
 let currentUser = "";
 
 window.startTracker = async function () {
