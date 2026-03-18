@@ -280,7 +280,7 @@ window.startTracker = async function () {
   document.getElementById("tracker").style.display = "block";
 };
 
-window.saveProgress = async function () {
+window.saveProgress = async function() {
   const checked = [];
   document.querySelectorAll('input[type="checkbox"]').forEach(box => {
     if (box.checked) {
@@ -288,14 +288,25 @@ window.saveProgress = async function () {
       checked.push(topic);
     }
   });
-
-  await setDoc(doc(db, "biology_students", currentUser), {
-    checked: checked
+  
+  const now = new Date();
+  const formattedDate = now.toLocaleString("en-US", {
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true
   });
-
+  
+  await setDoc(doc(db, "biology_students", currentUser), {
+    checked: checked,
+    lastUpdated: formattedDate
+  });
+  
   const toast = document.getElementById("toast");
+  toast.textContent = "Saved!";
   toast.classList.add("show");
-  setTimeout(() => toast.classList.remove("show"), 1500);
+  setTimeout(() => toast.classList.remove("show"), 2000);
 };
 </script>
 
